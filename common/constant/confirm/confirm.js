@@ -13,6 +13,7 @@ export const checkUserExist = async (users_id) => {
   const user = await prisma.users.findUnique({
     where: { users_id: +users_id },
   });
+  console.log(users_id);
   if (!user) throw new BadRequestException("User does not exist");
 
   return user;
