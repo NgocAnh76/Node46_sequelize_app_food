@@ -1,5 +1,7 @@
 import express from "express";
-import likeRouter from "./like.router.js";
+
+import restaurantRouter from "./restaurant.router.js";
+import userRouter from "./user.router.js";
 
 const rootRouter = express.Router();
 
@@ -7,6 +9,7 @@ rootRouter.get("/", (req, ses, next) => {
   res.json(`ok`);
 });
 
-rootRouter.use("/like", likeRouter);
+rootRouter.use("/user", userRouter);
+rootRouter.use("/restaurant", restaurantRouter);
 
 export default rootRouter;

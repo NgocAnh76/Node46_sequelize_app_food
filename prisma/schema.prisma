@@ -32,6 +32,7 @@ model like_res {
   users_id   Int?
   res_id     Int?
   date_like  DateTime?   @db.DateTime(0)
+  dis_like   Boolean?    @default(false)
   users      users?      @relation(fields: [users_id], references: [users_id], onDelete: NoAction, onUpdate: NoAction, map: "like_res_ibfk_1")
   restaurant restaurant? @relation(fields: [res_id], references: [res_id], onDelete: NoAction, onUpdate: NoAction, map: "like_res_ibfk_2")
 

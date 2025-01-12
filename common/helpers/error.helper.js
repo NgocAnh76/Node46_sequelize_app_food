@@ -10,7 +10,7 @@ export const handleError = (err, req, res, next) => {
     err.code = 403;
   }
   const resData = responseError(err.message, err.code, err.stack);
-  res.status(resData).jon(resData);
+  res.status(resData.code).json(resData);
 };
 
 export class BadRequestException extends Error {
